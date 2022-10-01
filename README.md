@@ -4,7 +4,7 @@
 
 Proszę przed zajęciami:
 
-- podstawy komendy linii komend Linux ([wprowadzenie](https://github.com/wojciech11/se_software_build_automation_tools/blob/master/00_intro/README_pl.md))
+- podstawy komendy linii komend Linux ([instrukcja](https://github.com/wojciech11/se_software_build_automation_tools/blob/master/00_intro/README_pl.md))
 - podstawy Pythona (funkcje oraz zmienne - [instrukcja](00_wprowadzenie/python.md))
 
 Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.com/Releases).
@@ -13,9 +13,9 @@ Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.c
 
 1. Przypadek testowy i pierwsze kroki BDD [4h]:
 
-   - [Markdown, git, ... z czego będziemy korzystać](00_wprowadzenie/);
-   - [wprowadzenie i przypadki testowe](01_przypadek_testowy);
-   - [pierwsze kroki BDD](https://github.com/wojciech11/se_bdd_basics).
+   - [Markdown, git, ... z czego będziemy korzystać](00_podstawy/);
+   - [Wprowadzenie i przypadki testowe](01_przypadek_testowy);
+   - [Pierwsze kroki BDD](https://github.com/wojciech11/se_bdd_basics).
 
 2. BDD [4h] - [instrukcja](https://github.com/wojciech11/se_bdd_basics).
 
@@ -24,7 +24,7 @@ Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.c
 4. Raportowanie bledow i Narzędzia oraz test na zaliczenie [4h]:
 
    - [Raportowanie i narzędzia](https:////github.com/wojciech11/se_bug_raporting_and_issue_tracking_tools);
-   - test na zaliczenie.
+   - Test na zaliczenie.
 
 ## Materiały dodatkowe
 
