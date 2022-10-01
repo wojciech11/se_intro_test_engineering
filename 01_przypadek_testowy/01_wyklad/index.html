@@ -1,0 +1,633 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>WSB - Wprowadzenie do testowania oprogramowania</title>
+
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="ext/bootstrap-4.0.0-beta/bootstrap.min.css">
+
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			.reveal section img {
+				background-color:white;
+				border:0;
+				box-shadow: 0 0 0 0;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>W<span style="text-transform: lowercase;">prowadzenie<br />do testowania oprogramowania</span></h3>
+					<img width="60%" src="img/analogia_frigate_pallada.jpg" />
+					<!-- https://en.wikipedia.org/wiki/File:FrigatePallada.jpg -->
+					<h5>P<span style="text-transform: lowercase;">rzypadki </span>T<span style="text-transform: lowercase;">estowe</span></h5>
+				</section>
+
+				<section>
+					<h3>Wojciech Barczyński</h3><!-- Dude, why should I listen to you? -->
+								<ul>
+									<li>Tech Lead</li>
+									<li>Software Developer -&gt; System Engineer</li>
+									<li>wojciech.barczynski@wsb.wroclaw.pl</li>
+								</ul>
+				</section>
+
+				<!--
+						LITERATURE
+				-->
+				<section data-markdown>
+					<script type="text/template">
+## Ć<span style="text-transform: lowercase;">wiczenia</span>
+
+<img width="50%" src="img/bombe.jpg" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+## Ć<span style="text-transform: lowercase;">wiczenie</span>
+
+- Problem
+- Mierzymy się z zadaniem samemu [timebox]
+- Pytamy
+
+<p><small>Można przyjść z swoim laptopem*</small></p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+## Z<span style="text-transform: lowercase;">ałożenia</span>
+
+- Programowania w Pythonie
+- Używanie wirtualnego środowiska:</br><code>python3 -m venv venv</code>
+
+<img width="30%" src="img/python_logo_and_wordmark.svg">
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+## W<span style="text-transform: lowercase;">łasne narzędzie pracy</span>
+
+Opcjonalnie:
+
+- Ubuntu / *BSD (może być w Virtualbox)
+- PyCharm lub vscode
+- Python3
+					</script>
+				</section>
+
+				<!-- section data-markdown>
+					<script type="text/template">
+## Ć<span style="text-transform: lowercase;">wiczenia</span>
+
+Proszę utwórzyć konto na Githubie lub Gitlabie.
+					</script>
+				</section -->
+
+				<!-- section data-markdown>
+					<script type="text/template">
+## Z<span style="text-transform: lowercase;">ajęcia</span>
+
+- https://vlabs.wsb.wroclaw.pl/portal/webclient/index.html
+- u:
+- p:
+					</script>
+				</section -->
+
+				<!--
+						LITERATURA DODATKOWA
+				-->
+				<section data-markdown>
+					<script type="text/template">
+						## M<span style="text-transform: lowercase;">ateriały<br />dodatkowe</span>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### J<span style="text-transform: lowercase;">ames </span>B<span style="text-transform: lowercase;">ach</span>
+
+Dość wyraziste opinie, inspirujace:
+
+- <a href="https://www.youtube.com/watch?v=ILkT_HV9DVU">Open lecture on Testing</a>
+- <a href="https://www.youtube.com/watch?v=JLVP_Z5AoyM">Test Cases are Not Testing</a>
+- <a href="https://www.youtube.com/watch?v=vqwyMaHcjQE&t=2s">On testing in an agile software development team</a>
+- <a href="https://www.youtube.com/watch?v=xaqagFHNF3A">Introduction to Rapid Software Testing Course</a>
+- <a href="https://www.youtube.com/watch?v=c5821YeWico&t=860s">On Future of testing</a>
+
+<p><small>Niekoniecznie ISTQB</small></p>
+					</script>
+				</section>
+				<!-- <a href="https://www.youtube.com/watch?v=SAhJf36_u5U">Agile Software Testing</a> -->
+
+				<section data-markdown>
+					<script type="text/template">
+### J<span style="text-transform: lowercase;">ames </span>B<span style="text-transform: lowercase;">ach</span>
+
+- [Blog](http://www.satisfice.com/blog/)
+- <a href="http://www.satisfice.com/rst.pdf">Rapid Software Testing</a>
+
+<p><small>Warto poszukać kogoś do wzorowania się.</small></p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### N<span style="text-transform: lowercase;">a kim się wzorować</span>
+
+- Robert C. Martin (Uncle Bob): [arch](https://www.youtube.com/watch?v=WpkDN78P884), [scrum](https://www.youtube.com/watch?v=hG4LH6P8Syk), [craftsmanship](https://www.youtube.com/watch?v=p0O1VVqRSK0&list=PLRTidqHTMvtn9Zm0T8fbonHKuueKWc_r7)
+- Martin Fowler: [arch](https://martinfowler.com/articles/microservice-testing/)
+- Martin Thomson: [perf](https://www.youtube.com/watch?v=S4LzzuMTqjs)
+- Brendan Greg: [perf](https://www.brendangregg.com/usemethod.html)
+- Golang: [Peter Bourgon](https://peter.bourgon.org/go-in-production/)
+- C++, Java, ..., microservices, startups,..., coding sessions
+					</script>
+				</section>
+				<!-- https://en.wikipedia.org/wiki/Design_Patterns -->
+
+				<section data-markdown>
+					<script type="text/template">
+						Are Your Lights On?: <br />How to Figure Out What the Problem Really Is?
+						<img src="img/literature_lights_on.jpg" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						Don’t Make Me Think: <br />A Common Sense Approach to Web Usability
+						<img src="img/literature_dont_make_me_think.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+The Design of Everyday Things
+<img width="60%" src="img/literature_design_of_everything.jpg">
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+Python
+
+<img width="30%" src="https://automatetheboringstuff.com/images/cover_beyond_thumb.png" />
+
+<p><small><a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a></small></p>
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+Lekka Lektura o najlepszych praktykach<br />dla programistów
+
+<b>Andrew Hunt, David Thomas, "Pragmatic Programmer". Addison-Wesley Professional</b>
+					</script>
+<!-- - https://medium.com/learn-love-code/learnings-from-learning-how-to-learn-19d149920dc4 -->
+				</section>
+
+				<!--
+						Podejście!
+				-->
+				<section>
+					<h3>Agenda</h3>
+					<ul>
+						<li>Kto to jest tester?</li>
+						<li>Co to jest testowanie?</li>
+						<li>Przypadki testowe</li>
+					</ul>
+				</section>
+
+				<!--
+						Kto To Jest Tester?
+				-->
+				<section data-markdown>
+					<script type="text/template">
+## T<span style="text-transform: lowercase;">ester <span>O<span style="text-transform: lowercase;">programowania</span>
+
+<img width="70%" src="img/analogia_frigate_pallada.jpg" />
+<p><small>Moja perspektywa: Developer, System Engineer, Startup</small></p>
+					</script>
+				</section>
+
+				<section>
+					<div class="container">
+						<div class="row">
+							<div class='col-md-6'>
+								<img width="100%" style="object-fit: fill;" src="img/reflector_49842649546_b4cea27ea5_c.jpg" />
+								<!-- https://www.flickr.com/photos/mustadmarine/49842649546/ -->
+							</div>
+							<div class='col-md-6'>
+								<p>Kto to jest tester oprogramowania?</p>
+								<ul>
+									<li>Reflektor, każdego projektu</li>
+									<li>Obserwator na dziobie okrętu</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+### O<span style="text-transform: lowercase;">programowanie jest wszędzie</span>
+
+- Rozruszniki serca
+- Systemy hamulcowe
+- ...
+- Zakupy online
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### O<span style="text-transform: lowercase;">programowanie jest wszędzie</span>
+
+- Wpływ na każdy aspekt naszego życia
+- Czas vs Jakość vs Funkcjonalność
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+## D<span style="text-transform: lowercase;">laczego</span>
+
+- Budowanie oprogramowania jest trudne
+- Produkt jest bardzo skomplikowany
+- Deweloperzy nie są w stanie być jednocześnie użytkownikami
+- Deweloperzy skupiają się na jednym aspekcie
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### K<span style="text-transform: lowercase;">ontekst</span>
+<img width="50%" src="img/kontekst.svg" />
+					</script>
+				</section>
+
+				<!--	<section data-markdown>
+									<script type="text/template">
+										### Kontekst
+
+										- Business / KPIs (+/-)
+										- Co użytkownik robi?
+										- Jakie zmiany były w aplikacji?
+										- Która ekran jest najważniejszy (%)
+										- Pomaga zrozumieć które błędy mogą pójść do prod
+									</script>
+				</section> -->
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">ester oprogramowania</span>
+
+- Zna i interesuje się produktem (często również konkurencji)
+- Chętnie eksperymentuje z aplikacją, eksplorującw poszukiwaniu błędów
+- Myśli krytycznie i identyfikuje fałszywe założenia
+- Obserwuje dynamikę projektu
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">ester </span>I<span style="text-transform: lowercase;">nżynier</span>
+
+- Potrafi zautomatyzować testy
+- Rozumie narzędzia oraz metryki z produkcji
+- Nie boi się zanurzyć w kodzie ramie<br />w ramie z deweloperem
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">ester </span>I<span style="text-transform: lowercase;">nżynier</span>
+
+- Walczy z complexity i rigidity
+- Zapobiega negatywnym wpływom testów na cykl rozwoju oprogramowanie
+					</script>
+				</section>
+
+				<section data-background="img/tester_przyklad_python_technologie.png" data-background-repeat="" data-background-size="100%">
+				</section>
+
+				<!-- section data-markdown>
+					<script type="text/template">
+### Obowiązki
+
+- 50% - Wykonywanie Testów
+- 20% - Raportowanie
+- 10% - Analiza Wymagań
+- 10% - Pisanie przypadków testowych
+- 10% - Telco, Spotkanie
+					</script>
+				</section -->
+
+				<!--
+						Co to są testy?
+				-->
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">esty</span>
+<img src="img/app_delivered.jpg" width="80%" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">esty</span>
+
+- Testy - Performance [1]/Eksploracyjne (Bach)
+- Testy - Weryfikacja Automatyczna
+
+<p><small>[1] tutaj w znaczeniu jak w teatrze</small></p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">esty</span> - P<span style="text-transform: lowercase;">erformance</span>
+
+- Manualny
+- Może być wspierany przez narzędzia <br />(curl, postman, selenium, tcpdump, consola dev)
+
+<small>Patrz : <a href="https://medium.freecodecamp.org/messing-with-the-google-buganizer-system-for-15-600-in-bounties-58f86cc9f9a5">Jak można zarobić 15k na Bug Bounty</a></small>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">esty - </span>A<span style="text-transform: lowercase;">utomatyczne</span>
+
+- Pasy bezpieczeństwa
+- Weryfikacja czy czegoś nie zepsuliśmy
+- Fuzzing
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">esty</span>
+
+<img width="50%" src="img/testing_pyramid_precise.png" />
+					</script>
+
+					<aside class="notes">
+						Whiteboard, draw on the whiteboard
+						Czym wyżej tym częściej są zmiany
+						Czym wyżej to testy bardziej ogólne (może nawet jako minitoring na canary)
+						...
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+## P<span style="text-transform: lowercase;">rzypadki </span>T<span style="text-transform: lowercase;">estowe</span>
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">rzypadki </span>T<span style="text-transform: lowercase;">estowe</span>
+
+- Wstępne warunki wykonania / Stan Początkowy
+- Zbiór danych wejściowych / Kroki
+- Oczekiwane rezultaty
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### O<span style="text-transform: lowercase;">biektywne spojrzenie</span>
+
+- Upewnienie się, że cały zespół tak samo rozumie scenariusz
+- Zweryfikowanie założeń, każdego członka zespołu
+- Znalezienie różnic w zrozumieniu w zespole
+- Pomoc w jednakowym rozumieniu wymagań
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">rzypadki </span>T<span style="text-transform: lowercase;">estowe</span>
+
+- Znalezienie błędów
+- Wsparcie w podejmowaniu decyzji
+- Ocena zgodności ze specyfikacją
+- Zapewnienie jakości
+- Dokumentacja
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### A<span style="text-transform: lowercase;">utomatyzacja testów</span>
+
+1. Zbudowanie zbioru przypadków testowych
+2. Wybór scenariusza, który daje największe korzyści
+3. Budowa autoamtycznego testu
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### K<span style="text-transform: lowercase;">luczowe elementy</span>
+
+1. Unikalny numer
+2. Jednoznacznie brzmiący tytuł
+3. Warunki wstępne
+4. Kroki
+5. Spodziewane rezultaty
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">rzypadki </span>T<span style="text-transform: lowercase;">estowe</span>
+
+- Dane testowe
+- Środowisko, Wersja
+- Powiązanie z wymaganiem (pokrycie wymagań)
+- Kategoria, Tagi, Autor
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### W<span style="text-transform: lowercase;">ykorzystanie</span>
+
+Techniki oparte:
+
+- na wymaganiach - black box
+- na strukturze - white box
+- na doświadczeniu
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">rzypadki </span>T<span style="text-transform: lowercase;">estowe</span>
+
+- Pamiętaj, że inne osoby będą korzystały z Twoich przypadków testowych
+- Pisz szczegółowo
+- Jedna konwencja
+- Przypadki pozytywne i negatywne
+- Zaplanuj przypadki testowe
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">amiętaj!
+
+- Jak najbliżej kodu i boardu
+- Łatwo dostępne
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### N<span style="text-transform: lowercase;">arzędzia</span>
+
+- Google Spreadsheet
+- Jira (XRay, Confluence, Zephyr)
+- TestLink
+- Pliki tekstowe - Markdown / RestructuredText
+- Excel
+- Twoje własne notatki, np., [zim](https://zim-wiki.org/)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### S<span style="text-transform: lowercase;">topień sformalizowania</span>
+
+- Kultury inżynierii oprogramowania w firmie
+- Ograniczeń czasowych
+- Wymagania prawne czy regulacje
+- ...
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">rzykład</span>
+
+<img width="90%" src="img/przyklad_przypadek_testowy.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### Z<span style="text-transform: lowercase;">auważ</span>
+
+Kroki niekoniecznie muszą być manualne, mogą być częściowo wykonane skryptem.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### T<span style="text-transform: lowercase;">woja kolej</span>
+
+1. Wybierz stronę internetową lub aplikację na swoim telefonie
+2. Przeglądamy jej funkcjonalność:
+   - Co by mogłoby nie zadziałać?
+   - Co jest krytyczną funkcjonlnością?
+3. Napisz **3-4** przypadki testowe
+4. Wyślij na wojciech.barczynski@wsb.wroclaw.pl
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### K<span style="text-transform: lowercase;">ilka pomysłów</span>
+
+1. https://www.phptravels.net
+2. mediamarkt
+3. https://www.ryanair.com/pl/pl
+					</script>
+				</section>
+
+				<!--
+					https://sqa.stackexchange.com/questions/28453/good-practices-for-finding-valid-issues-in-exploratory-testing/28468#28468
+				-->
+
+				<!--
+					Koniec
+				-->
+			<section>
+				<h3>Dziękuję za uwagę</h3>
+				<h4>W<span style="text-transform: lowercase;">ojciech</span> B<span style="text-transform: lowercase;">arczyński </span></h4>
+				<h4><span style="text-transform: lowercase;">wojciech.barczynski@wsb.wroclaw.pl</span></h4>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+#### Backup Slides
+
+<!-- img width="70%" src="img/Rubber_Duck_Sea_by_whispering_hills_1000_673_84_c1.jpg" -->
+				</script>
+			</section>
+
+			<!--
+			https://github.com/wojciech11/how_to_start_your_it_career
+			-->
+
+			<!-- section>
+				<h3>Licencja</h3>
+				<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; width:40%" src="img/licence-by.svg" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons<br /> Attribution 4.0 International License</a>
+			</section -->
+
+			</div>
+		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/dependencies.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
