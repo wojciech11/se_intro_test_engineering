@@ -5,7 +5,7 @@
 Proszę przed zajęciami:
 
 - podstawy komendy linii komend Linux ([instrukcja](https://github.com/wojciech11/se_software_build_automation_tools/blob/master/00_intro/README_pl.md))
-- podstawy Pythona (funkcje oraz zmienne - [instrukcja](00_wprowadzenie/python.md))
+- podstawy Pythona (funkcje oraz zmienne - [instrukcja](00_podstawy/python.md))
 
 Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.com/Releases).
 
