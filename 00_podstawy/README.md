@@ -1,4 +1,4 @@
-# Wprowadzenie
+# Podstawy
 
 1. Github;
 
