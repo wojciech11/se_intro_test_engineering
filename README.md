@@ -13,11 +13,11 @@ Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.c
 
 1. Przypadek testowy i pierwsze kroki BDD [4h]:
 
-   - [Markdown, git, ... z czego będziemy korzystać](00_podstawy/);
+   - [Markdown, git, python, linux... z czego będziemy korzystać](00_podstawy/);
    - [Wprowadzenie i przypadki testowe](01_przypadek_testowy);
    - [Pierwsze kroki BDD](https://github.com/wojciech11/se_bdd_basics).
 
-2. BDD [4h] - [instrukcja](https://github.com/wojciech11/se_bdd_basics).
+2. BDD [4h] - [instrukcja](https://github.com/wojciech11/se_bdd_basics). Proszę się przygotować: python `venv`, komendy Linux, oraz klonowanie repozytorium git.
 
 3. Testy Eksploracyjne [4h].
 
