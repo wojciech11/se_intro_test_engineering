@@ -33,3 +33,8 @@ Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.c
 - [Cypress - narzędzie do automatyzacji testowania](https://www.cypress.io/);
 - [selenium](https://www.selenium.dev/).
 
+<!-- 
+   https://lamport.azurewebsites.net/tla/industrial-use.html
+   https://coq.inria.fr/refman/practical-tools/coqide.html
+-->
+
