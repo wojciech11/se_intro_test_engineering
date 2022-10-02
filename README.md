@@ -28,5 +28,6 @@ Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.c
 
 ## Materiały dodatkowe
 
+- [Testowanie API](https://github.com/wojciech11/se_http_api_testing_quickstart)
 - [ćwiczenia ciągła integracja i deployment](https://github.com/wojciech11/se_continuous_delivery_and_deployment)
 - [cypress - narzędzie do automatyzacji testowania](https://www.cypress.io/)
