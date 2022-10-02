@@ -1,6 +1,6 @@
 ## Przypadki testowe
 
-Wykład (ćw): [wyklad](01_wykład/) ([pdf](wyklad/index.pdf))
+Wykład (ćw): [wyklad](01_wykład/) ([pdf](01_wyklad/index.pdf))
 
 Przykłady:
 
