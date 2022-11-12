@@ -19,12 +19,14 @@ Jeśli chcesz się przygotować, to rekomendujemy [Ubuntu](https://wiki.ubuntu.c
 
 2. BDD [4h] - [instrukcja](https://github.com/wojciech11/se_bdd_basics).<br />Proszę się przygotować: python `venv`, komendy Linux, oraz klonowanie repozytorium git.
 
-3. Testy Eksploracyjne [4h].
+3. Testy Eksploracyjne [4h]:
+
+   - [materiały](03_testy_eksporacyjne/README.md).
 
 4. Raportowanie bledow i Narzędzia oraz test na zaliczenie [4h]:
 
-   - [Raportowanie i narzędzia](https:////github.com/wojciech11/se_bug_raporting_and_issue_tracking_tools);
-   - Test na zaliczenie.
+   - [Raportowanie i narzędzia](https://github.com/wojciech11/se_bug_raporting_and_issue_tracking_tools);
+   - [Test na zaliczenie](04_raportowanie_i_narzedzia/egzamin.md).
 
 ## Materiały dodatkowe
 
