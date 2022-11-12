@@ -2,6 +2,7 @@
 
 - kontekst;
 - recent changes in the application;
+- Kreatywność i krytyczne myślenie;
 - performance (jak w teatrze);
 - [heuristics](https://youtu.be/isxoDumfr7k?t=985).
 
